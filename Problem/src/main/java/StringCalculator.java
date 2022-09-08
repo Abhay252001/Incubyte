@@ -1,3 +1,11 @@
+class MyException extends Exception
+{
+    public MyException(String str)
+    {
+        System.out.println(str);
+    }
+}
+
 public class StringCalculator {
     public int Add(String numbers){
         if(numbers.equals("")){
@@ -17,7 +25,14 @@ public class StringCalculator {
                     }
                 }
                 else {
-                    sum += Integer.parseInt(str[i]);
+                    try {
+                        int x = Integer.parseInt(str[i]);
+                        if(x<0)
+                            throw new MyException("Negatives not allowed");
+                        sum += x;
+                    }
+                    catch (MyException m) {
+                    }
                 }
             }
             return sum;

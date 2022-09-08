@@ -27,4 +27,16 @@ class StringCalculatorTest {
         StringCalculator sc = new StringCalculator();
         assertEquals(sc.Add("10,50,a,b"), 63);
     }
+
+    @Test
+    public void negativeValues() {
+        StringCalculator sc = new StringCalculator();
+        assertEquals(sc.Add("-10,50,a,b"), 53);
+    }
+
+    @Test
+    public void multipleNegativeValues() {
+        StringCalculator sc = new StringCalculator();
+        assertEquals(sc.Add("-10,-50,a,b"), 3);
+    }
 }
