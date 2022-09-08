@@ -39,4 +39,16 @@ class StringCalculatorTest {
         StringCalculator sc = new StringCalculator();
         assertEquals(sc.Add("-10,-50,a,b"), 3);
     }
+
+    @Test
+    public void biggerThan1000() {
+        StringCalculator sc = new StringCalculator();
+        assertEquals(sc.Add("10,50,1000,1001,9999,a,b"), 1063);
+    }
+
+    @Test
+    public void All() {
+        StringCalculator sc = new StringCalculator();
+        assertEquals(sc.Add("10,-50,1000,1001,9999,-99,a,b"), 1013);
+    }
 }
