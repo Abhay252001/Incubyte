@@ -21,4 +21,10 @@ class StringCalculatorTest {
         StringCalculator sc = new StringCalculator();
         assertEquals(sc.Add("10,50,90,100"), 250);
     }
+
+    @Test
+    public void numericAlphabates() {
+        StringCalculator sc = new StringCalculator();
+        assertEquals(sc.Add("10,50,a,b"), 63);
+    }
 }
